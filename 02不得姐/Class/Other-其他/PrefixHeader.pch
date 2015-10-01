@@ -1,0 +1,34 @@
+//
+//  PrefixHeader.pch
+//  02不得姐
+//
+//  Created by 陈亚龙 on 15/10/1.
+//  Copyright © 2015年 www.xm.com. All rights reserved.
+//
+#ifndef _________PrefixHeader_pch
+#define _________PrefixHeader_pch
+
+
+//日志输出
+#ifdef DEBUG//当前调试
+
+#define YLLog(...) NSLog(__VA_ARGS__)
+
+#else//发布阶段
+#define YLLog(...)
+
+#endif
+
+#import "UIView+YLFrame.h"
+#import "UIBarButtonItem+YLEXT.h"
+
+
+//颜色
+#define YLARGBColor(a,r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)/255.0]
+#define YLColor(r,g,b) YLARGBColor(255,(r),(g),(b))
+#define YLGrayColor(v) YLColor((v),(v),(v))
+#define YLCommonBGColor YLGrayColor(206)
+
+
+
+#endif
